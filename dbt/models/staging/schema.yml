@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests: [not_null]
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: [completed, refunded, cancelled]
+      - name: quantity
+        tests: [not_null]
+      - name: gross_revenue
+        tests: [not_null]
+

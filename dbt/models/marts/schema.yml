@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: mart_daily_sales
+    columns:
+      - name: order_date
+        tests: [not_null, unique]
+      - name: net_revenue
+        tests: [not_null]
+  - name: mart_category_performance
+    columns:
+      - name: category
+        tests: [not_null, unique]
+  - name: mart_customer_summary
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
